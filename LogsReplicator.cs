@@ -14,8 +14,8 @@ namespace Logs_Replicator
     {
         [FunctionName("LogsReplicator")]
         public static async Task Run(
-            [EventHubTrigger("aadlogs", Connection = "EventHubConnection")] EventData[] events,
-            [EventHub("destaadlogs", Connection = "DestEventHubConnection")] IAsyncCollector<string> outputEvents,
+            [EventHubTrigger("vrf77evnt", Connection = "Endpoint=sb://vrf77evnt.servicebus.windows.net/;SharedAccessKeyName=listener;SharedAccessKey=9S91OiYC5fWxGY6y+nqa9dEmJtHrZLbmK+AEhBebHr0=")] EventData[] events,
+            [EventHub("kcwebcomevnt", Connection = "Endpoint=sb://kcwebcomevnt.servicebus.windows.net/;SharedAccessKeyName=send;SharedAccessKey=MHLJ+yH1R4R5XTmoJpPiX6sAQY9RMkgIB+AEhPYKB00=")] IAsyncCollector<string> outputEvents,
             ILogger log)
         {
             var exceptions = new List<Exception>();
@@ -38,7 +38,7 @@ namespace Logs_Replicator
                         LogsSchema logEntry = JsonConvert.DeserializeObject<LogsSchema>( rawMessage );
                         foreach(Record record in logEntry.records)
                         {
-                            record.tenantName = "abc.com";
+                            record.tenantName = "vrf77.onmicrosoft.com";
                         }
 
                         log.LogInformation($"Number of record received: {logEntry.records.Count()}");

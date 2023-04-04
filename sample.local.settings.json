@@ -3,7 +3,7 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "EventHubConnection": "Endpoint=sb://xxx.servicebus.windows.net/;SharedAccessKeyName=listener;SharedAccessKey=xxxxxx",
-    "DestEventHubConnection": "Endpoint=sb://xxx.servicebus.windows.net/;SharedAccessKeyName=Sender;SharedAccessKey=xxxxxx"
+    "EventHubConnection": "Endpoint=sb://vrf77evnt.servicebus.windows.net/;SharedAccessKeyName=listener;SharedAccessKey=9S91OiYC5fWxGY6y+nqa9dEmJtHrZLbmK+AEhBebHr0=",
+    "DestEventHubConnection": "Endpoint=sb://kcwebcomevnt.servicebus.windows.net/;SharedAccessKeyName=send;SharedAccessKey=MHLJ+yH1R4R5XTmoJpPiX6sAQY9RMkgIB+AEhPYKB00="
   }
 }
